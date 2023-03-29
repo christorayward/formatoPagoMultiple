@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--BOOTSTRAP-->
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+    </script>
+
+  <!--JSPDF-->
+  <script src="/dist/jspdf.min.js"></script>
+  <script src="/dist/jspdf.debug.js"></script>
+
+  <!--
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+  <script src="/js/img.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  </script>
+  -->
+
+  <script src="/js/img.js"></script> <!--Imagenes en Base64-->
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="/css/form-validation.css" rel="stylesheet">
+
+  <!--Custom Fonts-->
+  <script src="/fonts/ARIALN-normal.js" type="module"></script>
+  <script src="/fonts/ARIALNB-normal.js" type="module"></script>
+  <script src="/fonts/calibri-normal.js" type="module"></script>
+  <script src="/fonts/calibrib-normal.js" type="module"></script>
+
+
+  <title>Generador de Formato de Pago Múltiple</title>
+
+</head>
+
+<body class="bg-light">
+
+  <div class="container">
+    <main>
+      <div class="py-3 text-center">
+        <img class="d-block mx-auto mb-1" src="/img/logo.png" alt="" width="250" height="auto">
+        <h2>Generador de Formato de Pago Múltiple</h2>
+        <p class="lead">Para llenado de formatos de Pago Multiconceptual.</p>
+      </div>
+
+      <div class="">
+        <!------------Empieza el formulario------------>
+        <form class="needs-validation" onsubmit="return false" novalidate>
+          <!-- onsubmit="return false; Sirve Para no enviar el formulario pero hacer la validación -->
+
+
+          <!------------Datos Personales------------>
+          <h5>Datos Personales</h5>
+          <div class="row g-3">
+
+            <div class="col-md-4">
+              <label for="nombres_Personal" class="form-label">Nombre(s):</label>
+              <input type="text" name="nombres_Personal" class="form-control text-uppercase" id="nombres_Personal"
+                placeholder="" pattern="[a-zA-ZñÑáéíóöúüÁÉÍÓÖÚÜ ]{0,30}" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu nombre o nombres.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="aPaterno_Personal" class="form-label">Apellido Paterno:</label>
+              <input type="text" name="aPaterno_Personal" class="form-control text-uppercase" id="aPaterno_Personal"
+                placeholder="" pattern="[a-zA-ZñÑáéíóöúüÁÉÍÓÖÚÜ]{0,20}" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu apellido paterno.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="aMaterno_Personal" class="form-label">Apellido Materno:</label>
+              <input type="text" name="aMaterno_Personal" class="form-control text-uppercase" id="aMaterno_Personal"
+                placeholder="" pattern="[A-Za-zñÑáéíóöúüÁÉÍÓÖÚÜ]{0,20}" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu apellido materno.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="razon_Social" class="form-label">Nombre o razón social:</label>
+              <input type="text" name="razon_Social" class="form-control text-uppercase" id="razon_Social"
+                placeholder="" pattern="[a-zA-ZñÑáéíóöúüÁÉÍÓÖÚÜ &,.-]{1,42}" required>
+              <div class="invalid-feedback">
+                Por favor escribe una razón social válida.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="RFC_Personal" class="form-label">RFC:</label>
+              <input type="text" name="RFC_Personal" class="form-control text-uppercase" id="RFC_Personal"
+                pattern="[A-Za-z0-9]{10,13}">
+              <div class="invalid-feedback">
+                Por favor escribe un RFC válido.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="calle_Personal" class="form-label">Calle:</label>
+              <input type="text" name="calle_Personal" class="form-control text-uppercase" id="calle_Personal"
+                placeholder="" pattern="[A-Za-z0-9 ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,40}" value="JUANA DE ARCO Y AEROPUERTO SUR DEL ESTADO" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu calle.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="noExt_Personal" class="form-label">No. Exterior:</label>
+              <input type="text" name="noExt_Personal" class="form-control text-uppercase" id="noExt_Personal"
+                placeholder="" pattern="[0-9]{0,10}" value="7643874374" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu número exterior.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="noInt_Personal" class="form-label">No. Interior (Opcional):</label>
+              <input type="text" name="noInt_Personal" class="form-control text-uppercase" id="noInt_Personal"
+                placeholder="" pattern="[0-9]{0,10}" value="343434343">
+              <div class="invalid-feedback">
+                Por favor escribe tu número interior.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="colonia_Personal" class="form-label">Colonia:</label>
+              <input type="text" name="colonia_Personal" class="form-control text-uppercase" id="colonia_Personal"
+                placeholder="" pattern="[A-Za-z0-9 ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,40}" value="RIO TECOMATLAN INDUSTRIAS ESPECIALES" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu colonia.
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+              <label for="cp_Personal" class="form-label">Código Postal:</label>
+              <input type="text" name="cp_Personal" class="form-control text-uppercase" id="cp_Personal" placeholder=""
+                pattern="[0-9]{0,9}" value="31300" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu código postal.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="entfed_Personal" class="form-label">Entidad Federativa o Estado:</label>
+              <select name=entfed_Personal class="form-select" id="entfed_Personal" required>
+                <option value="">Selecciona...</option>
+                <option value="AGUASCALIENTES">Aguascalientes</option>
+                <option value="BAJA CALIFORNIA">Baja California</option>
+                <option value="BAJA CALIFORNIA SUR">Baja California Sur</option>
+                <option value="CAMPECHE">Campeche</option>
+                <option value="CHIAPAS">Chiapas</option>
+                <option value="CHIHUAHUA">Chihuahua</option>
+                <option value="CDMX">Ciudad de México</option>
+                <option value="COAHUILA">Coahuila</option>
+                <option value="COLIMA">Colima</option>
+                <option value="DURANGO">Durango</option>
+                <option selected value="ESTADO DE MÉXICO">Estado de México</option>
+                <option value="GUANAJUATO">Guanajuato</option>
+                <option value="GUERRERO">Guerrero</option>
+                <option value="HIDALGO">Hidalgo</option>
+                <option value="JALISCO">Jalisco</option>
+                <option value="MICHOACAN">Michoacán</option>
+                <option value="MORELOS">Morelos</option>
+                <option value="NAYARIT">Nayarit</option>
+                <option value="NUEVO LEÓN">Nuevo León</option>
+                <option value="OAXACA">Oaxaca</option>
+                <option value="PUEBLA">Puebla</option>
+                <option value="QUERÉTARO">Querétaro</option>
+                <option value="QUINTANA ROO">Quintana Roo</option>
+                <option value="SAN LUIS POTOSÍ">San Luis Potosí</option>
+                <option value="SINALOA">Sinaloa</option>
+                <option value="SONORA">Sonora</option>
+                <option value="TABASCO">Tabasco</option>
+                <option value="TAMAULIPAS">Tamaulipas</option>
+                <option value="TLAXCALA">Tlaxcala</option>
+                <option value="VERACRUZ">Veracruz</option>
+                <option value="YUCATÁN">Yucatán</option>
+                <option value="ZACATECAS">Zacatecas</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona tu entidad federativa o estado.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="mun_Personal" class="form-label">Delegación o Municipio:</label>
+              <input type="text" name="mun_Personal" class="form-control text-uppercase" id="mun_Personal"
+                placeholder="" pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,28}" value="BACHINIBA" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu delegación o municipio.
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+              <label for="cd_Personal" class="form-label">Ciudad:</label>
+              <input type="text" name="cd_Personal" class="form-control text-uppercase" id="cd_Personal" placeholder=""
+                pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ.]{0,28}" value="CHIHUAHUA" required>
+              <div class="invalid-feedback">
+                Por favor escribe tu ciudad.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="tel_Personal" class="form-label">Número telefónico:</label>
+              <input type="text" name="tel_Personal" class="form-control text-uppercase" id="tel_Personal"
+                placeholder="" pattern="[0-9]{1,12}" value="6142157825">
+              <div class="invalid-feedback">
+                Por favor escribe tu número telefónico.
+              </div>
+            </div>
+
+
+
+            <h5>Conceptos</h5>
+
+            <!-- 
+            <div class="col-md-3">
+              <label for="clave_1" class="form-label">Clave 1:</label>
+              <input type="text" name="clave_1" class="form-control text-uppercase" id="clave_1" placeholder=""
+                pattern="[0-9]{8}" value="72836475" required>
+              <div class="invalid-feedback">
+                Por favor escribe la clave.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="observaciones_1" class="form-label">Observaciones 1:</label>
+              <input type="text" name="observaciones_1" class="form-control text-uppercase" id="observaciones_1"
+                placeholder="" pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ.]{0,40}"
+                value="SINODAL TEORÍA EXAMEN PRÁCTIVO DE VUELO" required>
+              <div class="invalid-feedback">
+                Por favor escribe las observaciones.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="importe_1" class="form-label">Importe 1:</label>
+              <input type="number" name="importe_1" class="form-control text-uppercase" id="importe_1" placeholder=""
+                pattern="[0-9.]{1,10}" value="28000.00" required>
+              <div class="invalid-feedback">
+                Por favor escribe el importe.
+              </div>
+            </div> -->
+
+
+            <div class="col-md-3">
+              <label for="cantidad_1" class="form-label">Cantidad 1:</label>
+              <input type="text" name="cantidad_1" class="form-control text-uppercase" id="cantidad_1" placeholder=""
+                pattern="[0-9]{1,2}" value="1" required>
+              <div class="invalid-feedback">
+                Por favor escribe la cantidad.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="conceptos_venta1" class="form-label">Concepto de Venta 1:</label>
+              <select name="conceptos_venta1" class="form-select" id="conceptos_venta1"
+                onchange="javascript: dynamicdropdown1(this.options[this.selectedIndex].value);" required>
+                <option value="">Selecciona...</option>
+                <option value="SINODAL DE EXAMEN DE VUELO">SINODAL DE EXAMEN DE VUELO</option>
+                <option value="CERTIFICACIÓN BITÁCORA">CERTIFICACIÓN BITÁCORA</option>
+                <option value="PERMISO DE FORMACIÓN">PERMISO DE FORMACIÓN</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL VUELO">EXPEDICIÓN DE LICENCIA PERSONAL VUELO</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL TIERRA">EXPEDICIÓN DE LICENCIA PERSONAL TIERRA</option>
+                <option value="CAPACIDAD RTAR">CAPACIDAD RTAR</option>
+                <option value="CAPACIDAD MONOMOTOR">CAPACIDAD MONOMOTOR</option>
+                <option value="SINODAL DE EXAMEN TEÓRICO">SINODAL DE EXAMEN TEÓRICO</option>
+                <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
+                <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
+                <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona un concepto de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="clave_venta1" class="form-label">Clave de Venta 1:</label>
+              <select name="clave_venta1" class="form-select" id="claveDropdown1" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una clave de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="tarifa_venta1" class="form-label">Tarifa 1:</label>
+              <select name="tarifa_venta1" class="form-select" id="tarifaDropdown1" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una tarifa de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cantidad_2" class="form-label">Cantidad 2:</label>
+              <input type="text" name="cantidad_2" class="form-control text-uppercase" id="cantidad_2" placeholder=""
+                pattern="[0-9]{1,2}" value="1" required>
+              <div class="invalid-feedback">
+                Por favor escribe la cantidad.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="conceptos_venta2" class="form-label">Concepto de Venta 2:</label>
+              <select name="conceptos_venta2" class="form-select" id="conceptos_venta2"
+                onchange="javascript: dynamicdropdown2(this.options[this.selectedIndex].value);">
+                <option value="">Selecciona...</option>
+                <option value="SINODAL DE EXAMEN DE VUELO">SINODAL DE EXAMEN DE VUELO</option>
+                <option value="CERTIFICACIÓN BITÁCORA">CERTIFICACIÓN BITÁCORA</option>
+                <option value="PERMISO DE FORMACIÓN">PERMISO DE FORMACIÓN</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL VUELO">EXPEDICIÓN DE LICENCIA PERSONAL VUELO</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL TIERRA">EXPEDICIÓN DE LICENCIA PERSONAL TIERRA</option>
+                <option value="CAPACIDAD RTAR">CAPACIDAD RTAR</option>
+                <option value="CAPACIDAD MONOMOTOR">CAPACIDAD MONOMOTOR</option>
+                <option value="SINODAL DE EXAMEN TEÓRICO">SINODAL DE EXAMEN TEÓRICO</option>
+                <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
+                <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
+                <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona un concepto de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="clave_venta2" class="form-label">Clave de Venta 2:</label>
+              <select name="clave_venta2" class="form-select" id="claveDropdown2" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una clave de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="tarifa_venta2" class="form-label">Tarifa 2:</label>
+              <select name="tarifa_venta2" class="form-select" id="tarifaDropdown2" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una tarifa de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cantidad_3" class="form-label">Cantidad 3:</label>
+              <input type="text" name="cantidad_3" class="form-control text-uppercase" id="cantidad_3" placeholder=""
+                pattern="[0-9]{1,2}" value="1" required>
+              <div class="invalid-feedback">
+                Por favor escribe la cantidad.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="conceptos_venta3" class="form-label">Concepto de Venta 3:</label>
+              <select name="conceptos_venta3" class="form-select" id="conceptos_venta3"
+                onchange="javascript: dynamicdropdown3(this.options[this.selectedIndex].value);">
+                <option value="">Selecciona...</option>
+                <option value="SINODAL DE EXAMEN DE VUELO">SINODAL DE EXAMEN DE VUELO</option>
+                <option value="CERTIFICACIÓN BITÁCORA">CERTIFICACIÓN BITÁCORA</option>
+                <option value="PERMISO DE FORMACIÓN">PERMISO DE FORMACIÓN</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL VUELO">EXPEDICIÓN DE LICENCIA PERSONAL VUELO</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL TIERRA">EXPEDICIÓN DE LICENCIA PERSONAL TIERRA</option>
+                <option value="CAPACIDAD RTAR">CAPACIDAD RTAR</option>
+                <option value="CAPACIDAD MONOMOTOR">CAPACIDAD MONOMOTOR</option>
+                <option value="SINODAL DE EXAMEN TEÓRICO">SINODAL DE EXAMEN TEÓRICO</option>
+                <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
+                <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
+                <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona un concepto de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="clave_venta3" class="form-label">Clave de Venta 3:</label>
+              <select name="clave_venta3" class="form-select" id="claveDropdown3" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una clave de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="tarifa_venta3" class="form-label">Tarifa 3:</label>
+              <select name="tarifa_venta3" class="form-select" id="tarifaDropdown3" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una tarifa de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cantidad_4" class="form-label">Cantidad 4:</label>
+              <input type="text" name="cantidad_4" class="form-control text-uppercase" id="cantidad_4" placeholder=""
+                pattern="[0-9]{1,2}" value="1" required>
+              <div class="invalid-feedback">
+                Por favor escribe la cantidad.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="conceptos_venta4" class="form-label">Concepto de Venta 4:</label>
+              <select name="conceptos_venta4" class="form-select" id="conceptos_venta4"
+                onchange="javascript: dynamicdropdown4(this.options[this.selectedIndex].value);">
+                <option value="">Selecciona...</option>
+                <option value="SINODAL DE EXAMEN DE VUELO">SINODAL DE EXAMEN DE VUELO</option>
+                <option value="CERTIFICACIÓN BITÁCORA">CERTIFICACIÓN BITÁCORA</option>
+                <option value="PERMISO DE FORMACIÓN">PERMISO DE FORMACIÓN</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL VUELO">EXPEDICIÓN DE LICENCIA PERSONAL VUELO</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL TIERRA">EXPEDICIÓN DE LICENCIA PERSONAL TIERRA</option>
+                <option value="CAPACIDAD RTAR">CAPACIDAD RTAR</option>
+                <option value="CAPACIDAD MONOMOTOR">CAPACIDAD MONOMOTOR</option>
+                <option value="SINODAL DE EXAMEN TEÓRICO">SINODAL DE EXAMEN TEÓRICO</option>
+                <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
+                <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
+                <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona un concepto de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="clave_venta4" class="form-label">Clave de Venta 4:</label>
+              <select name="clave_venta4" class="form-select" id="claveDropdown4" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una clave de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="tarifa_venta4" class="form-label">Tarifa 4:</label>
+              <select name="tarifa_venta4" class="form-select" id="tarifaDropdown4" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una tarifa de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cantidad_5" class="form-label">Cantidad 5:</label>
+              <input type="text" name="cantidad_5" class="form-control text-uppercase" id="cantidad_5" placeholder=""
+                pattern="[0-9]{1,2}" value="1" required>
+              <div class="invalid-feedback">
+                Por favor escribe la cantidad.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="conceptos_venta5" class="form-label">Concepto de Venta 5:</label>
+              <select name="conceptos_venta5" class="form-select" id="conceptos_venta5"
+                onchange="javascript: dynamicdropdown5(this.options[this.selectedIndex].value);">
+                <option value="">Selecciona...</option>
+                <option value="SINODAL DE EXAMEN DE VUELO">SINODAL DE EXAMEN DE VUELO</option>
+                <option value="CERTIFICACIÓN BITÁCORA">CERTIFICACIÓN BITÁCORA</option>
+                <option value="PERMISO DE FORMACIÓN">PERMISO DE FORMACIÓN</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL VUELO">EXPEDICIÓN DE LICENCIA PERSONAL VUELO</option>
+                <option value="EXPEDICIÓN DE LICENCIA PERSONAL TIERRA">EXPEDICIÓN DE LICENCIA PERSONAL TIERRA</option>
+                <option value="CAPACIDAD RTAR">CAPACIDAD RTAR</option>
+                <option value="CAPACIDAD MONOMOTOR">CAPACIDAD MONOMOTOR</option>
+                <option value="SINODAL DE EXAMEN TEÓRICO">SINODAL DE EXAMEN TEÓRICO</option>
+                <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
+                <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
+                <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona un concepto de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="clave_venta5" class="form-label">Clave de Venta 5:</label>
+              <select name="clave_venta5" class="form-select" id="claveDropdown5" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una clave de venta.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="tarifa_venta5" class="form-label">Tarifa 5:</label>
+              <select name="tarifa_venta5" class="form-select" id="tarifaDropdown5" disabled>
+                <option selected>Selecciona...</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor selecciona una tarifa de venta.
+              </div>
+            </div>
+
+
+            <div class="d-inline-flex justify-content-center">
+              <p class="p-2 border bg-black rounded-3 primary text-white fs-5 text-center fw-bold text-uppercase mb-1">
+                favor de
+                descargar el pdf al generarlo, porque no se guarda.</p>
+            </div>
+
+
+            <div class="col-6">
+              <!--<input type="submit" class="w-100 btn btn-primary btn-lg" name="insert" value="Enviar">-->
+              <button type="submit" id="btnvalidar" class="w-100 btn btn-primary btn-lg" onclick="sub()">Validar
+                Información</button>
+            </div>
+            <div class="col-6">
+              <input type="button" id="btnformatoPagoMultiple" class="w-100 btn btn-primary btn-lg"
+                onclick="formatoPagoMultiple()" value="Generar Formato" disabled>
+            </div>
+            <h4 class="pb-2"></h4>
+
+          </div>
+        </form>
+
+    </main>
+
+  </div>
+
+  <script>
+
+    function doHTMLClave1(clave1) {
+      let string = "";
+      let index = 0;
+      console.log(clave1);
+      clave1.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+      });
+      return string;
+    }
+    function doHTMLTarifa1(tarifa1) {
+      let string = "";
+      let index = 0;
+      console.log(tarifa1);
+      tarifa1.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+        console.log(string);
+      });
+      return string;
+    }
+    function doHTMLClave2(clave2) {
+      let string = "";
+      let index = 0;
+      console.log(clave2);
+      clave2.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+      });
+      return string;
+    }
+    function doHTMLTarifa2(tarifa2) {
+      let string = "";
+      let index = 0;
+      console.log(tarifa2);
+      tarifa2.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+        console.log(string);
+      });
+      return string;
+    }
+    function doHTMLClave3(clave3) {
+      let string = "";
+      let index = 0;
+      console.log(clave3);
+      clave3.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+      });
+      return string;
+    }
+    function doHTMLTarifa3(tarifa3) {
+      let string = "";
+      let index = 0;
+      console.log(tarifa3);
+      tarifa3.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+        console.log(string);
+      });
+      return string;
+    }
+    function doHTMLClave4(clave4) {
+      let string = "";
+      let index = 0;
+      console.log(clave4);
+      clave4.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+      });
+      return string;
+    }
+    function doHTMLTarifa4(tarifa4) {
+      let string = "";
+      let index = 0;
+      console.log(tarifa4);
+      tarifa4.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+        console.log(string);
+      });
+      return string;
+    }
+    function doHTMLClave5(clave5) {
+      let string = "";
+      let index = 0;
+      console.log(clave5);
+      clave5.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+      });
+      return string;
+    }
+    function doHTMLTarifa5(tarifa5) {
+      let string = "";
+      let index = 0;
+      console.log(tarifa5);
+      tarifa5.forEach(element => {
+        string += `<option value="${element}">${element}</option>`;
+        console.log(string);
+      });
+      return string;
+    }
+
+    function dynamicdropdown1(conceptos_venta1) {
+      let clave_venta1 = ["05855211"];
+      let clave_venta2 = ["05006218"];
+      let clave_venta3 = ["05311275"];
+      let clave_venta4 = ["05311275"];
+      let clave_venta5 = ["05312244"];
+      let clave_venta6 = ["05311275"];
+      let clave_venta7 = ["05311275"];
+      let clave_venta8 = ["05855211"];
+      let clave_venta9 = ["05329289"];
+      let clave_venta10 = ["05312244"];
+      let clave_venta11 = ["05311275"];
+
+      let tarifa_venta1 = ["2548.00"];
+      let tarifa_venta2 = ["212.00"];
+      let tarifa_venta3 = ["1834.00"];
+      let tarifa_venta4 = ["1834.00"];
+      let tarifa_venta5 = ["1375.00"];
+      let tarifa_venta6 = ["1834.00"];
+      let tarifa_venta7 = ["1834.00"];
+      let tarifa_venta8 = ["2548.00"];
+      let tarifa_venta9 = ["2092.00"];
+      let tarifa_venta10 = ["1375.00"];
+      let tarifa_venta11 = ["1834.00"];
+
+      let claveDropdown1 = document.getElementById("claveDropdown1");
+      let tarifaDropdown1 = document.getElementById("tarifaDropdown1");
+
+      if (conceptos_venta1 == "SINODAL DE EXAMEN DE VUELO") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta1);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta1);
+      }
+      if (conceptos_venta1 == "CERTIFICACIÓN BITÁCORA") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta2);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta2);
+      }
+      if (conceptos_venta1 == "PERMISO DE FORMACIÓN") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta3);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta3);
+      }
+      if (conceptos_venta1 == "EXPEDICIÓN DE LICENCIA PERSONAL VUELO") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta4);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta4);
+      }
+      if (conceptos_venta1 == "EXPEDICIÓN DE LICENCIA PERSONAL TIERRA") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta5);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta5);
+      }
+      if (conceptos_venta1 == "CAPACIDAD RTAR") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta6);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta6);
+      }
+      if (conceptos_venta1 == "CAPACIDAD MONOMOTOR") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta7);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta7);
+      }
+      if (conceptos_venta1 == "SINODAL DE EXAMEN TEÓRICO") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta8);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta8);
+      }
+      if (conceptos_venta1 == "AVISO INICIO DE CURSO") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta9);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta9);
+      }
+      if (conceptos_venta1 == "PERMISO INSTRUCTOR DE TIERRA") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta10);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta10);
+      }
+      if (conceptos_venta1 == "PERMISO INSTRUCTOR DE VUELO") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta11);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta11);
+      }
+      if (conceptos_venta1 == "") {
+        claveDropdown1.innerHTML = null;
+        tarifaDropdown1.innerHTML = null;
+      }
+    }
+
+    function dynamicdropdown2(conceptos_venta2) {
+      let clave_venta1 = ["05855211"];
+      let clave_venta2 = ["05006218"];
+      let clave_venta3 = ["05311275"];
+      let clave_venta4 = ["05311275"];
+      let clave_venta5 = ["05312244"];
+      let clave_venta6 = ["05311275"];
+      let clave_venta7 = ["05311275"];
+      let clave_venta8 = ["05855211"];
+      let clave_venta9 = ["05329289"];
+      let clave_venta10 = ["05312244"];
+      let clave_venta11 = ["05311275"];
+
+      let tarifa_venta1 = ["2548.00"];
+      let tarifa_venta2 = ["212.00"];
+      let tarifa_venta3 = ["1834.00"];
+      let tarifa_venta4 = ["1834.00"];
+      let tarifa_venta5 = ["1375.00"];
+      let tarifa_venta6 = ["1834.00"];
+      let tarifa_venta7 = ["1834.00"];
+      let tarifa_venta8 = ["2548.00"];
+      let tarifa_venta9 = ["2092.00"];
+      let tarifa_venta10 = ["1375.00"];
+      let tarifa_venta11 = ["1834.00"];
+
+      let claveDropdown2 = document.getElementById("claveDropdown2");
+      let tarifaDropdown2 = document.getElementById("tarifaDropdown2");
+
+      if (conceptos_venta2 == "SINODAL DE EXAMEN DE VUELO") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta1);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta1);
+      }
+      if (conceptos_venta2 == "CERTIFICACIÓN BITÁCORA") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta2);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta2);
+      }
+      if (conceptos_venta2 == "PERMISO DE FORMACIÓN") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta3);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta3);
+      }
+      if (conceptos_venta2 == "EXPEDICIÓN DE LICENCIA PERSONAL VUELO") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta4);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta4);
+      }
+      if (conceptos_venta2 == "EXPEDICIÓN DE LICENCIA PERSONAL TIERRA") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta5);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta5);
+      }
+      if (conceptos_venta2 == "CAPACIDAD RTAR") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta6);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta6);
+      }
+      if (conceptos_venta2 == "CAPACIDAD MONOMOTOR") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta7);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta7);
+      }
+      if (conceptos_venta2 == "SINODAL DE EXAMEN TEÓRICO") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta8);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta8);
+      }
+      if (conceptos_venta2 == "AVISO INICIO DE CURSO") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta9);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta9);
+      }
+      if (conceptos_venta2 == "PERMISO INSTRUCTOR DE TIERRA") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta10);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta10);
+      }
+      if (conceptos_venta2 == "PERMISO INSTRUCTOR DE VUELO") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta11);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta11);
+      }
+      if (conceptos_venta2 == "") {
+        claveDropdown2.innerHTML = null;
+        tarifaDropdown2.innerHTML = null;
+      }
+    }
+
+    function dynamicdropdown3(conceptos_venta3) {
+      let clave_venta1 = ["05855211"];
+      let clave_venta2 = ["05006218"];
+      let clave_venta3 = ["05311275"];
+      let clave_venta4 = ["05311275"];
+      let clave_venta5 = ["05312244"];
+      let clave_venta6 = ["05311275"];
+      let clave_venta7 = ["05311275"];
+      let clave_venta8 = ["05855211"];
+      let clave_venta9 = ["05329289"];
+      let clave_venta10 = ["05312244"];
+      let clave_venta11 = ["05311275"];
+
+      let tarifa_venta1 = ["2548.00"];
+      let tarifa_venta2 = ["212.00"];
+      let tarifa_venta3 = ["1834.00"];
+      let tarifa_venta4 = ["1834.00"];
+      let tarifa_venta5 = ["1375.00"];
+      let tarifa_venta6 = ["1834.00"];
+      let tarifa_venta7 = ["1834.00"];
+      let tarifa_venta8 = ["2548.00"];
+      let tarifa_venta9 = ["2092.00"];
+      let tarifa_venta10 = ["1375.00"];
+      let tarifa_venta11 = ["1834.00"];
+
+      let claveDropdown3 = document.getElementById("claveDropdown3");
+      let tarifaDropdown3 = document.getElementById("tarifaDropdown3");
+
+      if (conceptos_venta3 == "SINODAL DE EXAMEN DE VUELO") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta1);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta1);
+      }
+      if (conceptos_venta3 == "CERTIFICACIÓN BITÁCORA") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta2);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta2);
+      }
+      if (conceptos_venta3 == "PERMISO DE FORMACIÓN") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta3);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta3);
+      }
+      if (conceptos_venta3 == "EXPEDICIÓN DE LICENCIA PERSONAL VUELO") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta4);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta4);
+      }
+      if (conceptos_venta3 == "EXPEDICIÓN DE LICENCIA PERSONAL TIERRA") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta5);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta5);
+      }
+      if (conceptos_venta3 == "CAPACIDAD RTAR") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta6);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta6);
+      }
+      if (conceptos_venta3 == "CAPACIDAD MONOMOTOR") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta7);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta7);
+      }
+      if (conceptos_venta3 == "SINODAL DE EXAMEN TEÓRICO") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta8);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta8);
+      }
+      if (conceptos_venta3 == "AVISO INICIO DE CURSO") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta9);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta9);
+      }
+      if (conceptos_venta3 == "PERMISO INSTRUCTOR DE TIERRA") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta10);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta10);
+      }
+      if (conceptos_venta3 == "PERMISO INSTRUCTOR DE VUELO") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta11);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta11);
+      }
+      if (conceptos_venta3 == "") {
+        claveDropdown3.innerHTML = null;
+        tarifaDropdown3.innerHTML = null;
+      }
+    }
+
+    function dynamicdropdown4(conceptos_venta4) {
+      let clave_venta1 = ["05855211"];
+      let clave_venta2 = ["05006218"];
+      let clave_venta3 = ["05311275"];
+      let clave_venta4 = ["05311275"];
+      let clave_venta5 = ["05312244"];
+      let clave_venta6 = ["05311275"];
+      let clave_venta7 = ["05311275"];
+      let clave_venta8 = ["05855211"];
+      let clave_venta9 = ["05329289"];
+      let clave_venta10 = ["05312244"];
+      let clave_venta11 = ["05311275"];
+
+      let tarifa_venta1 = ["2548.00"];
+      let tarifa_venta2 = ["212.00"];
+      let tarifa_venta3 = ["1834.00"];
+      let tarifa_venta4 = ["1834.00"];
+      let tarifa_venta5 = ["1375.00"];
+      let tarifa_venta6 = ["1834.00"];
+      let tarifa_venta7 = ["1834.00"];
+      let tarifa_venta8 = ["2548.00"];
+      let tarifa_venta9 = ["2092.00"];
+      let tarifa_venta10 = ["1375.00"];
+      let tarifa_venta11 = ["1834.00"];
+
+      let claveDropdown4 = document.getElementById("claveDropdown4");
+      let tarifaDropdown4 = document.getElementById("tarifaDropdown4");
+
+      if (conceptos_venta4 == "SINODAL DE EXAMEN DE VUELO") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta1);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta1);
+      }
+      if (conceptos_venta4 == "CERTIFICACIÓN BITÁCORA") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta2);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta2);
+      }
+      if (conceptos_venta4 == "PERMISO DE FORMACIÓN") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta3);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta3);
+      }
+      if (conceptos_venta4 == "EXPEDICIÓN DE LICENCIA PERSONAL VUELO") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta4);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta4);
+      }
+      if (conceptos_venta4 == "EXPEDICIÓN DE LICENCIA PERSONAL TIERRA") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta5);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta5);
+      }
+      if (conceptos_venta4 == "CAPACIDAD RTAR") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta6);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta6);
+      }
+      if (conceptos_venta4 == "CAPACIDAD MONOMOTOR") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta7);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta7);
+      }
+      if (conceptos_venta4 == "SINODAL DE EXAMEN TEÓRICO") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta8);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta8);
+      }
+      if (conceptos_venta4 == "AVISO INICIO DE CURSO") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta9);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta9);
+      }
+      if (conceptos_venta4 == "PERMISO INSTRUCTOR DE TIERRA") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta10);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta10);
+      }
+      if (conceptos_venta4 == "PERMISO INSTRUCTOR DE VUELO") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta11);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta11);
+      }
+      if (conceptos_venta4 == "") {
+        claveDropdown4.innerHTML = null;
+        tarifaDropdown4.innerHTML = null;
+      }
+    }
+
+    function dynamicdropdown5(conceptos_venta5) {
+      let clave_venta1 = ["05855211"];
+      let clave_venta2 = ["05006218"];
+      let clave_venta3 = ["05311275"];
+      let clave_venta4 = ["05311275"];
+      let clave_venta5 = ["05312244"];
+      let clave_venta6 = ["05311275"];
+      let clave_venta7 = ["05311275"];
+      let clave_venta8 = ["05855211"];
+      let clave_venta9 = ["05329289"];
+      let clave_venta10 = ["05312244"];
+      let clave_venta11 = ["05311275"];
+
+      let tarifa_venta1 = ["2548.00"];
+      let tarifa_venta2 = ["212.00"];
+      let tarifa_venta3 = ["1834.00"];
+      let tarifa_venta4 = ["1834.00"];
+      let tarifa_venta5 = ["1375.00"];
+      let tarifa_venta6 = ["1834.00"];
+      let tarifa_venta7 = ["1834.00"];
+      let tarifa_venta8 = ["2548.00"];
+      let tarifa_venta9 = ["2092.00"];
+      let tarifa_venta10 = ["1375.00"];
+      let tarifa_venta11 = ["1834.00"];
+
+      let claveDropdown5 = document.getElementById("claveDropdown5");
+      let tarifaDropdown5 = document.getElementById("tarifaDropdown5");
+
+      if (conceptos_venta5 == "SINODAL DE EXAMEN DE VUELO") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta1);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta1);
+      }
+      if (conceptos_venta5 == "CERTIFICACIÓN BITÁCORA") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta2);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta2);
+      }
+      if (conceptos_venta5 == "PERMISO DE FORMACIÓN") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta3);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta3);
+      }
+      if (conceptos_venta5 == "EXPEDICIÓN DE LICENCIA PERSONAL VUELO") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta4);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta4);
+      }
+      if (conceptos_venta5 == "EXPEDICIÓN DE LICENCIA PERSONAL TIERRA") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta5);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta5);
+      }
+      if (conceptos_venta5 == "CAPACIDAD RTAR") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta6);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta6);
+      }
+      if (conceptos_venta5 == "CAPACIDAD MONOMOTOR") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta7);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta7);
+      }
+      if (conceptos_venta5 == "SINODAL DE EXAMEN TEÓRICO") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta8);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta8);
+      }
+      if (conceptos_venta5 == "AVISO INICIO DE CURSO") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta9);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta9);
+      }
+      if (conceptos_venta5 == "PERMISO INSTRUCTOR DE TIERRA") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta10);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta10);
+      }
+      if (conceptos_venta5 == "PERMISO INSTRUCTOR DE VUELO") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta11);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta11);
+      }
+      if (conceptos_venta5 == "") {
+        claveDropdown5.innerHTML = null;
+        tarifaDropdown5.innerHTML = null;
+      }
+    }
+
+    //Script para generar datos en cédula 0
+    //Datos Personales:
+    var RFC_Personal, nombres_Personal, aPaterno_Personal, aMaterno_Personal, razon_Social, calle_Personal,
+      noExt_Personal, noInt_Personal = null,
+      colonia_Personal, cp_Personal, cd_Personal, mun_Personal, entfed_Personal, tel_Personal;
+
+    // var cantidad_1, clave_1, observaciones_1, importe_1;
+
+    var cantidad_1 = null, conceptos_venta1 = null, clave_venta1 = null, tarifa_venta1 = null;
+    var cantidad_2 = null, conceptos_venta2 = null, clave_venta2 = null, tarifa_venta2 = null;
+    var cantidad_3 = null, conceptos_venta3 = null, clave_venta3 = null, tarifa_venta3 = null;
+    var cantidad_4 = null, conceptos_venta4 = null, clave_venta4 = null, tarifa_venta4 = null;
+    var cantidad_5 = null, conceptos_venta5 = null, clave_venta5 = null, tarifa_venta5 = null;
+
+
+    //submit
+    function sub() {
+      nombres_Personal = document.getElementById("nombres_Personal").value.toUpperCase();
+      aPaterno_Personal = document.getElementById("aPaterno_Personal").value.toUpperCase();
+      aMaterno_Personal = document.getElementById("aMaterno_Personal").value.toUpperCase();
+      RFC_Personal = document.getElementById("RFC_Personal").value.toUpperCase();
+      razon_Social = document.getElementById("razon_Social").value.toUpperCase();
+      calle_Personal = document.getElementById("calle_Personal").value.toUpperCase();
+      noExt_Personal = document.getElementById("noExt_Personal").value.toUpperCase();
+      noInt_Personal = document.getElementById("noInt_Personal").value.toUpperCase();
+      colonia_Personal = document.getElementById("colonia_Personal").value.toUpperCase();
+      cp_Personal = document.getElementById("cp_Personal").value.toUpperCase();
+      cd_Personal = document.getElementById("cd_Personal").value.toUpperCase();
+      mun_Personal = document.getElementById("mun_Personal").value.toUpperCase();
+      entfed_Personal = document.getElementById("entfed_Personal").value.toUpperCase();
+      tel_Personal = document.getElementById("tel_Personal").value.toUpperCase();
+
+      // clave_1 = document.getElementById("clave_1").value.toUpperCase();
+      // observaciones_1 = document.getElementById("observaciones_1").value.toUpperCase();
+      // importe_1 = document.getElementById("importe_1").value.toUpperCase();
+
+      cantidad_1 = document.getElementById("cantidad_1").value.toUpperCase();
+      conceptos_venta1 = document.getElementById("conceptos_venta1").value.toUpperCase();
+      clave_venta1 = document.getElementById("claveDropdown1").value.toUpperCase();
+      tarifa_venta1 = document.getElementById("tarifaDropdown1").value.toUpperCase();
+
+      cantidad_2 = document.getElementById("cantidad_2").value.toUpperCase();
+      conceptos_venta2 = document.getElementById("conceptos_venta2").value.toUpperCase();
+      clave_venta2 = document.getElementById("claveDropdown2").value.toUpperCase();
+      tarifa_venta2 = document.getElementById("tarifaDropdown2").value.toUpperCase();
+
+      cantidad_3 = document.getElementById("cantidad_3").value.toUpperCase();
+      conceptos_venta3 = document.getElementById("conceptos_venta3").value.toUpperCase();
+      clave_venta3 = document.getElementById("claveDropdown3").value.toUpperCase();
+      tarifa_venta3 = document.getElementById("tarifaDropdown3").value.toUpperCase();
+
+      cantidad_4 = document.getElementById("cantidad_4").value.toUpperCase();
+      conceptos_venta4 = document.getElementById("conceptos_venta4").value.toUpperCase();
+      clave_venta4 = document.getElementById("claveDropdown4").value.toUpperCase();
+      tarifa_venta4 = document.getElementById("tarifaDropdown4").value.toUpperCase();
+
+      cantidad_5 = document.getElementById("cantidad_5").value.toUpperCase();
+      conceptos_venta5 = document.getElementById("conceptos_venta5").value.toUpperCase();
+      clave_venta5 = document.getElementById("claveDropdown5").value.toUpperCase();
+      tarifa_venta5 = document.getElementById("tarifaDropdown5").value.toUpperCase();
+
+      importe = 0;
+
+      importe = parseFloat(importe);
+
+      if (tarifa_venta1 != null && tarifa_venta1 != 'SELECCIONA...' && tarifa_venta1 != '') {
+        importe += parseFloat(cantidad_1) * parseFloat(tarifa_venta1);
+      }
+      if (tarifa_venta2 != null && tarifa_venta2 != 'SELECCIONA...' && tarifa_venta2 != '') {
+        importe += parseFloat(cantidad_2) * parseFloat(tarifa_venta2);
+      }
+      if (tarifa_venta3 != null && tarifa_venta3 != 'SELECCIONA...' && tarifa_venta3 != '') {
+        importe += parseFloat(cantidad_3) * parseFloat(tarifa_venta3);
+      }
+      if (tarifa_venta4 != null && tarifa_venta4 != 'SELECCIONA...' && tarifa_venta4 != '') {
+        importe += parseFloat(cantidad_4) * parseFloat(tarifa_venta4);
+      }
+      if (tarifa_venta5 != null && tarifa_venta5 != 'SELECCIONA...' && tarifa_venta5 != '') {
+        importe += parseFloat(cantidad_5) * parseFloat(tarifa_venta5);
+      }
+
+      importe = new Intl.NumberFormat('es-MX', {minimumFractionDigits: 2}).format( importe );
+      
+      importe = importe.toString().toString().indexOf('.') === -1 ? importe.toFixed(2) : importe.toString();
+
+    };
+  </script>
+  <script src="/js/formatoPagoMultiple.js"></script>
+  <script src="/js/form-validation.js"></script>
+
+
+</body>
+
+</html>
