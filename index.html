@@ -109,7 +109,7 @@
             <div class="col-md-4">
               <label for="calle_Personal" class="form-label">Calle:</label>
               <input type="text" name="calle_Personal" class="form-control text-uppercase" id="calle_Personal"
-                placeholder="" pattern="[A-Za-z0-9 ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,40}" value="JUANA DE ARCO Y AEROPUERTO SUR DEL ESTADO" required>
+                placeholder="" pattern="[A-Za-z0-9 ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,40}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu calle.
               </div>
@@ -118,7 +118,7 @@
             <div class="col-md-4">
               <label for="noExt_Personal" class="form-label">No. Exterior:</label>
               <input type="text" name="noExt_Personal" class="form-control text-uppercase" id="noExt_Personal"
-                placeholder="" pattern="[0-9]{0,10}" value="7643874374" required>
+                placeholder="" pattern="[0-9]{0,10}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu número exterior.
               </div>
@@ -127,7 +127,7 @@
             <div class="col-md-4">
               <label for="noInt_Personal" class="form-label">No. Interior (Opcional):</label>
               <input type="text" name="noInt_Personal" class="form-control text-uppercase" id="noInt_Personal"
-                placeholder="" pattern="[0-9]{0,10}" value="343434343">
+                placeholder="" pattern="[0-9]{0,10}">
               <div class="invalid-feedback">
                 Por favor escribe tu número interior.
               </div>
@@ -136,7 +136,7 @@
             <div class="col-md-4">
               <label for="colonia_Personal" class="form-label">Colonia:</label>
               <input type="text" name="colonia_Personal" class="form-control text-uppercase" id="colonia_Personal"
-                placeholder="" pattern="[A-Za-z0-9 ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,40}" value="RIO TECOMATLAN INDUSTRIAS ESPECIALES" required>
+                placeholder="" pattern="[A-Za-z0-9 ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,40}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu colonia.
               </div>
@@ -146,7 +146,7 @@
             <div class="col-md-4">
               <label for="cp_Personal" class="form-label">Código Postal:</label>
               <input type="text" name="cp_Personal" class="form-control text-uppercase" id="cp_Personal" placeholder=""
-                pattern="[0-9]{0,9}" value="31300" required>
+                pattern="[0-9]{0,9}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu código postal.
               </div>
@@ -166,7 +166,7 @@
                 <option value="COAHUILA">Coahuila</option>
                 <option value="COLIMA">Colima</option>
                 <option value="DURANGO">Durango</option>
-                <option selected value="ESTADO DE MÉXICO">Estado de México</option>
+                <option value="ESTADO DE MÉXICO">Estado de México</option>
                 <option value="GUANAJUATO">Guanajuato</option>
                 <option value="GUERRERO">Guerrero</option>
                 <option value="HIDALGO">Hidalgo</option>
@@ -197,7 +197,7 @@
             <div class="col-md-4">
               <label for="mun_Personal" class="form-label">Delegación o Municipio:</label>
               <input type="text" name="mun_Personal" class="form-control text-uppercase" id="mun_Personal"
-                placeholder="" pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,28}" value="BACHINIBA" required>
+                placeholder="" pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ]{0,28}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu delegación o municipio.
               </div>
@@ -207,7 +207,7 @@
             <div class="col-md-4">
               <label for="cd_Personal" class="form-label">Ciudad:</label>
               <input type="text" name="cd_Personal" class="form-control text-uppercase" id="cd_Personal" placeholder=""
-                pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ.]{0,28}" value="CHIHUAHUA" required>
+                pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ.]{0,28}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu ciudad.
               </div>
@@ -216,50 +216,18 @@
             <div class="col-md-4">
               <label for="tel_Personal" class="form-label">Número telefónico:</label>
               <input type="text" name="tel_Personal" class="form-control text-uppercase" id="tel_Personal"
-                placeholder="" pattern="[0-9]{1,12}" value="6142157825">
+                placeholder="" pattern="[0-9]{1,12}">
               <div class="invalid-feedback">
                 Por favor escribe tu número telefónico.
               </div>
             </div>
 
-
-
             <h5>Conceptos</h5>
-
-            <!-- 
-            <div class="col-md-3">
-              <label for="clave_1" class="form-label">Clave 1:</label>
-              <input type="text" name="clave_1" class="form-control text-uppercase" id="clave_1" placeholder=""
-                pattern="[0-9]{8}" value="72836475" required>
-              <div class="invalid-feedback">
-                Por favor escribe la clave.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="observaciones_1" class="form-label">Observaciones 1:</label>
-              <input type="text" name="observaciones_1" class="form-control text-uppercase" id="observaciones_1"
-                placeholder="" pattern="[A-Za-z ñÑáéíóöúüÁÉÍÓÖÚÜ.]{0,40}"
-                value="SINODAL TEORÍA EXAMEN PRÁCTIVO DE VUELO" required>
-              <div class="invalid-feedback">
-                Por favor escribe las observaciones.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="importe_1" class="form-label">Importe 1:</label>
-              <input type="number" name="importe_1" class="form-control text-uppercase" id="importe_1" placeholder=""
-                pattern="[0-9.]{1,10}" value="28000.00" required>
-              <div class="invalid-feedback">
-                Por favor escribe el importe.
-              </div>
-            </div> -->
-
 
             <div class="col-md-3">
               <label for="cantidad_1" class="form-label">Cantidad 1:</label>
               <input type="text" name="cantidad_1" class="form-control text-uppercase" id="cantidad_1" placeholder=""
-                pattern="[0-9]{1,2}" value="1" required>
+                pattern="[0-9]{1,2}" required>
               <div class="invalid-feedback">
                 Por favor escribe la cantidad.
               </div>
@@ -310,7 +278,7 @@
             <div class="col-md-3">
               <label for="cantidad_2" class="form-label">Cantidad 2:</label>
               <input type="text" name="cantidad_2" class="form-control text-uppercase" id="cantidad_2" placeholder=""
-                pattern="[0-9]{1,2}" value="1" required>
+                pattern="[0-9]{1,2}" required>
               <div class="invalid-feedback">
                 Por favor escribe la cantidad.
               </div>
@@ -361,7 +329,7 @@
             <div class="col-md-3">
               <label for="cantidad_3" class="form-label">Cantidad 3:</label>
               <input type="text" name="cantidad_3" class="form-control text-uppercase" id="cantidad_3" placeholder=""
-                pattern="[0-9]{1,2}" value="1" required>
+                pattern="[0-9]{1,2}" required>
               <div class="invalid-feedback">
                 Por favor escribe la cantidad.
               </div>
@@ -412,7 +380,7 @@
             <div class="col-md-3">
               <label for="cantidad_4" class="form-label">Cantidad 4:</label>
               <input type="text" name="cantidad_4" class="form-control text-uppercase" id="cantidad_4" placeholder=""
-                pattern="[0-9]{1,2}" value="1" required>
+                pattern="[0-9]{1,2}" required>
               <div class="invalid-feedback">
                 Por favor escribe la cantidad.
               </div>
@@ -463,7 +431,7 @@
             <div class="col-md-3">
               <label for="cantidad_5" class="form-label">Cantidad 5:</label>
               <input type="text" name="cantidad_5" class="form-control text-uppercase" id="cantidad_5" placeholder=""
-                pattern="[0-9]{1,2}" value="1" required>
+                pattern="[0-9]{1,2}" required>
               <div class="invalid-feedback">
                 Por favor escribe la cantidad.
               </div>
