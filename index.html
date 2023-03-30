@@ -1009,11 +1009,11 @@
 
     // var cantidad_1, clave_1, observaciones_1, importe_1;
 
-    var cantidad_1 = null, conceptos_venta1 = null, clave_venta1 = null, tarifa_venta1 = null;
-    var cantidad_2 = null, conceptos_venta2 = null, clave_venta2 = null, tarifa_venta2 = null;
-    var cantidad_3 = null, conceptos_venta3 = null, clave_venta3 = null, tarifa_venta3 = null;
-    var cantidad_4 = null, conceptos_venta4 = null, clave_venta4 = null, tarifa_venta4 = null;
-    var cantidad_5 = null, conceptos_venta5 = null, clave_venta5 = null, tarifa_venta5 = null;
+    var cantidad_1 = null, conceptos_venta1 = null, clave_venta1 = null, tarifa_venta1 = 0;
+    var cantidad_2 = null, conceptos_venta2 = null, clave_venta2 = null, tarifa_venta2 = 0;
+    var cantidad_3 = null, conceptos_venta3 = null, clave_venta3 = null, tarifa_venta3 = 0;
+    var cantidad_4 = null, conceptos_venta4 = null, clave_venta4 = null, tarifa_venta4 = 0;
+    var cantidad_5 = null, conceptos_venta5 = null, clave_venta5 = null, tarifa_venta5 = 0;
 
 
     //submit
@@ -1069,34 +1069,32 @@
 
       if (tarifa_venta1 != null && tarifa_venta1 != 'SELECCIONA...' && tarifa_venta1 != '') {
         importe += parseFloat(cantidad_1) * parseFloat(tarifa_venta1);
+        tarifa_venta1 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta1);
+        tarifa_venta1 = tarifa_venta1.toString().indexOf('.') === -1 ? tarifa_venta1.toFixed(2) : tarifa_venta1.toString();
       }
       if (tarifa_venta2 != null && tarifa_venta2 != 'SELECCIONA...' && tarifa_venta2 != '') {
         importe += parseFloat(cantidad_2) * parseFloat(tarifa_venta2);
+        tarifa_venta2 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta2);
+        tarifa_venta2 = tarifa_venta2.toString().indexOf('.') === -1 ? tarifa_venta2.toFixed(2) : tarifa_venta2.toString();
       }
       if (tarifa_venta3 != null && tarifa_venta3 != 'SELECCIONA...' && tarifa_venta3 != '') {
         importe += parseFloat(cantidad_3) * parseFloat(tarifa_venta3);
+        tarifa_venta3 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta3);
+        tarifa_venta3 = tarifa_venta3.toString().indexOf('.') === -1 ? tarifa_venta3.toFixed(2) : tarifa_venta3.toString();
       }
       if (tarifa_venta4 != null && tarifa_venta4 != 'SELECCIONA...' && tarifa_venta4 != '') {
         importe += parseFloat(cantidad_4) * parseFloat(tarifa_venta4);
+        tarifa_venta4 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta4);
+        tarifa_venta4 = tarifa_venta4.toString().indexOf('.') === -1 ? tarifa_venta4.toFixed(2) : tarifa_venta4.toString();
       }
       if (tarifa_venta5 != null && tarifa_venta5 != 'SELECCIONA...' && tarifa_venta5 != '') {
         importe += parseFloat(cantidad_5) * parseFloat(tarifa_venta5);
+        tarifa_venta5 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta5);
+        tarifa_venta5 = tarifa_venta5.toString().indexOf('.') === -1 ? tarifa_venta5.toFixed(2) : tarifa_venta5.toString();
       }
 
-      tarifa_venta1 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta1);
-      tarifa_venta2 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta2);
-      tarifa_venta3 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta3);
-      tarifa_venta4 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta4);
-      tarifa_venta5 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta5);
       importe = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(importe);
-
-      tarifa_venta1 = tarifa_venta1.toString().indexOf('.') === -1 ? tarifa_venta1.toFixed(2) : tarifa_venta1.toString();
-      tarifa_venta2 = tarifa_venta2.toString().indexOf('.') === -1 ? tarifa_venta2.toFixed(2) : tarifa_venta2.toString();
-      tarifa_venta3 = tarifa_venta3.toString().indexOf('.') === -1 ? tarifa_venta3.toFixed(2) : tarifa_venta3.toString();
-      tarifa_venta4 = tarifa_venta4.toString().indexOf('.') === -1 ? tarifa_venta4.toFixed(2) : tarifa_venta4.toString();
-      tarifa_venta5 = tarifa_venta5.toString().indexOf('.') === -1 ? tarifa_venta5.toFixed(2) : tarifa_venta5.toString();
       importe = importe.toString().indexOf('.') === -1 ? importe.toFixed(2) : importe.toString();
-
 
       fechaPago = new Date(fechaPago);
       fechaPago = fechaPago.toUTCString('es-MX', {
