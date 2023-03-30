@@ -88,7 +88,15 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
+              <label for="fechaPago" class="form-label">Fecha de Pago:</label>
+              <input type="date" name="fechaPago" class="form-control" id="fechaPago" name="fechaPago" required>
+              <div class="invalid-feedback">
+                Por favor escribe una fecha de de pago válida.
+              </div>
+            </div>
+
+            <div class="col-md-4">
               <label for="razon_Social" class="form-label">Nombre o razón social:</label>
               <input type="text" name="razon_Social" class="form-control text-uppercase" id="razon_Social"
                 placeholder="" pattern="[a-zA-ZñÑáéíóöúüÁÉÍÓÖÚÜ &,.-]{1,42}" required>
@@ -97,7 +105,7 @@
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-4">
               <label for="RFC_Personal" class="form-label">RFC:</label>
               <input type="text" name="RFC_Personal" class="form-control text-uppercase" id="RFC_Personal"
                 pattern="[A-Za-z0-9]{10,13}">
@@ -995,7 +1003,7 @@
 
     //Script para generar datos en cédula 0
     //Datos Personales:
-    var RFC_Personal, nombres_Personal, aPaterno_Personal, aMaterno_Personal, razon_Social, calle_Personal,
+    var fechaPago, RFC_Personal, nombres_Personal, aPaterno_Personal, aMaterno_Personal, razon_Social, calle_Personal,
       noExt_Personal, noInt_Personal = null,
       colonia_Personal, cp_Personal, cd_Personal, mun_Personal, entfed_Personal, tel_Personal;
 
@@ -1010,6 +1018,7 @@
 
     //submit
     function sub() {
+      fechaPago = document.getElementById("fechaPago").value.toUpperCase();
       nombres_Personal = document.getElementById("nombres_Personal").value.toUpperCase();
       aPaterno_Personal = document.getElementById("aPaterno_Personal").value.toUpperCase();
       aMaterno_Personal = document.getElementById("aMaterno_Personal").value.toUpperCase();
@@ -1074,9 +1083,22 @@
         importe += parseFloat(cantidad_5) * parseFloat(tarifa_venta5);
       }
 
-      importe = new Intl.NumberFormat('es-MX', {minimumFractionDigits: 2}).format( importe );
-      
+      importe = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(importe);
+
       importe = importe.toString().toString().indexOf('.') === -1 ? importe.toFixed(2) : importe.toString();
+
+
+      fechaPago = new Date(fechaPago);
+      fechaPago = fechaPago.toUTCString('es-MX', {
+        timeZone: 'America/Mexico_City',
+      });
+
+      utcDateTime = fechaPago.split(',')[1];
+      splitUtcDateTime = utcDateTime.split(' ');
+      month = splitUtcDateTime[2];
+      day = splitUtcDateTime[1];
+      year = splitUtcDateTime[3];
+
 
     };
   </script>
