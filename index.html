@@ -1083,9 +1083,19 @@
         importe += parseFloat(cantidad_5) * parseFloat(tarifa_venta5);
       }
 
+      tarifa_venta1 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta1);
+      tarifa_venta2 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta2);
+      tarifa_venta3 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta3);
+      tarifa_venta4 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta4);
+      tarifa_venta5 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta5);
       importe = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(importe);
 
-      importe = importe.toString().toString().indexOf('.') === -1 ? importe.toFixed(2) : importe.toString();
+      tarifa_venta1 = tarifa_venta1.toString().indexOf('.') === -1 ? tarifa_venta1.toFixed(2) : tarifa_venta1.toString();
+      tarifa_venta2 = tarifa_venta2.toString().indexOf('.') === -1 ? tarifa_venta2.toFixed(2) : tarifa_venta2.toString();
+      tarifa_venta3 = tarifa_venta3.toString().indexOf('.') === -1 ? tarifa_venta3.toFixed(2) : tarifa_venta3.toString();
+      tarifa_venta4 = tarifa_venta4.toString().indexOf('.') === -1 ? tarifa_venta4.toFixed(2) : tarifa_venta4.toString();
+      tarifa_venta5 = tarifa_venta5.toString().indexOf('.') === -1 ? tarifa_venta5.toFixed(2) : tarifa_venta5.toString();
+      importe = importe.toString().indexOf('.') === -1 ? importe.toFixed(2) : importe.toString();
 
 
       fechaPago = new Date(fechaPago);
