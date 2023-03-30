@@ -126,7 +126,12 @@ formatoPagoMultiple = () => {
     doc.text(27, 153, cantidad_1);
     doc.text(46, 153, clave_venta1);
     doc.setFontSize(10);
-    doc.text(71, 153, conceptos_venta1);
+    if( conceptos_venta1.length < 40 ){
+        doc.text(71, 153, conceptos_venta1);
+    }else{
+        doc.setFontSize(8.5);
+        doc.text(71, 153, conceptos_venta1);
+    }
     doc.setFontSize(11);
     doc.text(170, 153, '$' + tarifa_venta1);
 
@@ -134,7 +139,12 @@ formatoPagoMultiple = () => {
         doc.text(27, 168, cantidad_2);
         doc.text(46, 168, clave_venta2);
         doc.setFontSize(10);
-        doc.text(71, 168, conceptos_venta2);
+        if( conceptos_venta2.length < 40 ){
+            doc.text(71, 168, conceptos_venta2);
+        }else{
+            doc.setFontSize(8.5);
+            doc.text(71, 168, conceptos_venta2);
+        }
         doc.setFontSize(11);
         doc.text(170, 168, '$' + tarifa_venta2);
     }
@@ -143,7 +153,12 @@ formatoPagoMultiple = () => {
         doc.text(27, 183, cantidad_3);
         doc.text(46, 183, clave_venta3);
         doc.setFontSize(10);
-        doc.text(71, 183, conceptos_venta3);
+        if( conceptos_venta3.length < 40 ){
+            doc.text(71, 183, conceptos_venta3);
+        }else{
+            doc.setFontSize(8.5);
+            doc.text(71, 183, conceptos_venta3);
+        }
         doc.setFontSize(11);
         doc.text(170, 183, '$' + tarifa_venta3);
     }
@@ -152,7 +167,12 @@ formatoPagoMultiple = () => {
         doc.text(27, 198, cantidad_4);
         doc.text(46, 198, clave_venta4);
         doc.setFontSize(10);
-        doc.text(71, 198, conceptos_venta4);
+        if( conceptos_venta4.length < 40 ){
+            doc.text(71, 198, conceptos_venta4);
+        }else{
+            doc.setFontSize(8.5);
+            doc.text(71, 198, conceptos_venta4);
+        }
         doc.setFontSize(11);
         doc.text(170, 198, '$' + tarifa_venta4);
     }
@@ -161,7 +181,12 @@ formatoPagoMultiple = () => {
         doc.text(27, 213, cantidad_5);
         doc.text(46, 213, clave_venta5);
         doc.setFontSize(10);
-        doc.text(71, 213, conceptos_venta5);
+        if( conceptos_venta5.length < 40 ){
+            doc.text(71, 213, conceptos_venta5);
+        }else{
+            doc.setFontSize(8.5);
+            doc.text(71, 213, conceptos_venta5);
+        }
         doc.setFontSize(11);
         doc.text(170, 213, '$' + tarifa_venta5);
     }
