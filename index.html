@@ -99,7 +99,7 @@
             <div class="col-md-4">
               <label for="razon_Social" class="form-label">Nombre o razón social:</label>
               <input type="text" name="razon_Social" class="form-control text-uppercase" id="razon_Social"
-                placeholder="" pattern="[a-zA-ZñÑáéíóöúüÁÉÍÓÖÚÜ &,.-]{1,42}" required>
+                placeholder="" pattern="[a-zA-ZñÑáéíóöúüÁÉÍÓÖÚÜ &,.-]{1,60}" required>
               <div class="invalid-feedback">
                 Por favor escribe una razón social válida.
               </div>
@@ -126,7 +126,7 @@
             <div class="col-md-4">
               <label for="noExt_Personal" class="form-label">No. Exterior:</label>
               <input type="text" name="noExt_Personal" class="form-control text-uppercase" id="noExt_Personal"
-                placeholder="" pattern="[0-9]{0,10}" required>
+                placeholder="" pattern="[A-Za-z0-9 /úÚ]{0,10}" required>
               <div class="invalid-feedback">
                 Por favor escribe tu número exterior.
               </div>
