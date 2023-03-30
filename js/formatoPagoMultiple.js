@@ -68,20 +68,39 @@ formatoPagoMultiple = () => {
     doc.setFontSize(11);
     doc.text(46, 52.7, nombres_Personal + ' ' + aPaterno_Personal + ' ' + aMaterno_Personal);
 
+    if(razon_Social.length < 44 ){
+        doc.setFontSize(11);
+        doc.text(19, 87, razon_Social);
+    }else{
+        doc.setFontSize(9.3);
+        doc.text(19, 87, razon_Social);
+    }
+    
     doc.setFontSize(11);
-    doc.text(19, 87, razon_Social);
-
     doc.text(126, 87, RFC_Personal);
 
     doc.setFontSize(10.5);
-    if (noInt_Personal != '') {
-        doc.text(19, 95.8, 'CALLE ' + calle_Personal + ' N. EXT. ' + noExt_Personal + ' N. INT. ' + noInt_Personal);
-        doc.text(19, 99.8, 'COLONIA ' + colonia_Personal);
+
+    if (/^\d+$/.test(noExt_Personal) == true){
+        if (noInt_Personal != '') {
+            doc.text(19, 95.8, 'CALLE ' + calle_Personal + ' N. EXT. ' + noExt_Personal + ' N. INT. ' + noInt_Personal);
+            doc.text(19, 99.8, 'COLONIA ' + colonia_Personal);
+        }
+        else {
+            doc.text(19, 95.8, 'CALLE ' + calle_Personal + ' N. EXT. ' + noExt_Personal);
+            doc.text(19, 99.8, 'COLONIA ' + colonia_Personal);
+        }
+    }else{
+        if (noInt_Personal != '') {
+            doc.text(19, 95.8, 'CALLE ' + calle_Personal + ' ' + noExt_Personal + ' N. INT. ' + noInt_Personal);
+            doc.text(19, 99.8, 'COLONIA ' + colonia_Personal);
+        }
+        else {
+            doc.text(19, 95.8, 'CALLE ' + calle_Personal + ' ' + noExt_Personal);
+            doc.text(19, 99.8, 'COLONIA ' + colonia_Personal);
+        }
     }
-    else {
-        doc.text(19, 95.8, 'CALLE ' + calle_Personal + ' N. EXT. ' + noExt_Personal);
-        doc.text(19, 99.8, colonia_Personal);
-    }
+    
 
     doc.setFontSize(11);
 
