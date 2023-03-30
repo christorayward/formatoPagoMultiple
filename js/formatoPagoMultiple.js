@@ -89,7 +89,7 @@ formatoPagoMultiple = () => {
     doc.setFontSize(11);
     doc.text(152, 86.5, RFC_Personal);
 
-    doc.setFontSize(10.5);
+    doc.setFontSize(10);
 
     if (/^\d+$/.test(noExt_Personal) == true){
         if (noInt_Personal != '') {
