@@ -18,6 +18,52 @@ formatoPagoMultiple = () => {
 
     doc.addImage(formatoImg, 0, 0, 215.891, 279.389);
 
+    doc.setFontSize(11);
+
+    doc.text(94.3, 44, day);
+    switch (month) {
+        case 'Jan':
+            doc.text(112, 44, 'Enero');
+            break;
+        case 'Feb':
+            doc.text(112, 44, 'Febrero');
+            break;
+        case 'Mar':
+            doc.text(112, 44, 'Marzo');
+            break;
+        case 'Apr':
+            doc.text(112, 44, 'Abril');
+            break;
+        case 'May':
+            doc.text(112, 44, 'Mayo');
+            break;
+        case 'Jun':
+            doc.text(112, 44, 'Junio');
+            break;
+        case 'Jul':
+            doc.text(112, 44, 'Julio');
+            break;
+        case 'Aug':
+            doc.text(112, 44, 'Agosto');
+            break;
+        case 'Sep':
+            doc.text(112, 44, 'Septiembre');
+            break;
+        case 'Oct':
+            doc.text(112, 44, 'Octubre');
+            break;
+        case 'Nov':
+            doc.text(112, 44, 'Noviembre');
+            break;
+        case 'Dec':
+            doc.text(112, 44, 'Diciembre');
+            break;
+        default:
+            doc.text(112, 44, 'No existe el mes');
+    }
+
+    
+    doc.text(148.2, 44, year);
 
     doc.setFontSize(11);
     doc.text(46, 52.7, nombres_Personal + ' ' + aPaterno_Personal + ' ' + aMaterno_Personal);
@@ -33,7 +79,7 @@ formatoPagoMultiple = () => {
         doc.text(19, 99.8, 'COLONIA ' + colonia_Personal);
     }
     else {
-        doc.text(19, 95.8, calle_Personal + ' #' + noExt_Personal);
+        doc.text(19, 95.8, 'CALLE ' + calle_Personal + ' N. EXT. ' + noExt_Personal);
         doc.text(19, 99.8, colonia_Personal);
     }
 
@@ -53,7 +99,7 @@ formatoPagoMultiple = () => {
     doc.setFontSize(10);
     doc.text(71, 153, conceptos_venta1);
     doc.setFontSize(11);
-    doc.text(171, 153, '$' + tarifa_venta1);
+    doc.text(170, 153, '$' + tarifa_venta1);
 
     if (clave_venta2 != 'SELECCIONA...' && clave_venta2 != '') {
         doc.text(27, 168, cantidad_2);
@@ -61,7 +107,7 @@ formatoPagoMultiple = () => {
         doc.setFontSize(10);
         doc.text(71, 168, conceptos_venta2);
         doc.setFontSize(11);
-        doc.text(171, 168, '$' + tarifa_venta2);
+        doc.text(170, 168, '$' + tarifa_venta2);
     }
 
     if (clave_venta3 != 'SELECCIONA...' && clave_venta3 != '') {
@@ -70,7 +116,7 @@ formatoPagoMultiple = () => {
         doc.setFontSize(10);
         doc.text(71, 183, conceptos_venta3);
         doc.setFontSize(11);
-        doc.text(171, 183, '$' + tarifa_venta3);
+        doc.text(170, 183, '$' + tarifa_venta3);
     }
 
     if (clave_venta4 != 'SELECCIONA...' && clave_venta4 != '') {
@@ -79,7 +125,7 @@ formatoPagoMultiple = () => {
         doc.setFontSize(10);
         doc.text(71, 198, conceptos_venta4);
         doc.setFontSize(11);
-        doc.text(171, 198, '$' + tarifa_venta4);
+        doc.text(170, 198, '$' + tarifa_venta4);
     }
 
     if (clave_venta5 != 'SELECCIONA...' && clave_venta5 != '') {
@@ -88,10 +134,10 @@ formatoPagoMultiple = () => {
         doc.setFontSize(10);
         doc.text(71, 213, conceptos_venta5);
         doc.setFontSize(11);
-        doc.text(171, 213, '$' + tarifa_venta5);
+        doc.text(170, 213, '$' + tarifa_venta5);
     }
 
-    doc.text(171, 225, '$' + importe);
+    doc.text(170, 225, '$' + importe);
 
     // doc.rect(71.399, 15.698, 102.782, 19.597, 'S');
     // doc.setFontSize(12);
