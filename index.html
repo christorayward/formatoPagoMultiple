@@ -257,6 +257,9 @@
                 <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
                 <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
                 <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+                <option value="POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA">POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA</option>
+                <option value="AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA">AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA</option>
+                <option value="CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO">CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO</option>
               </select>
               <div class="invalid-feedback">
                 Por favor selecciona un concepto de venta.
@@ -308,6 +311,9 @@
                 <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
                 <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
                 <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+                <option value="POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA">POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA</option>
+                <option value="AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA">AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA</option>
+                <option value="CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO">CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO</option>
               </select>
               <div class="invalid-feedback">
                 Por favor selecciona un concepto de venta.
@@ -359,6 +365,9 @@
                 <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
                 <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
                 <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+                <option value="POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA">POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA</option>
+                <option value="AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA">AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA</option>
+                <option value="CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO">CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO</option>
               </select>
               <div class="invalid-feedback">
                 Por favor selecciona un concepto de venta.
@@ -410,6 +419,9 @@
                 <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
                 <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
                 <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+                <option value="POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA">POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA</option>
+                <option value="AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA">AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA</option>
+                <option value="CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO">CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO</option>
               </select>
               <div class="invalid-feedback">
                 Por favor selecciona un concepto de venta.
@@ -461,6 +473,9 @@
                 <option value="AVISO INICIO DE CURSO">AVISO INICIO DE CURSO</option>
                 <option value="PERMISO INSTRUCTOR DE TIERRA">PERMISO INSTRUCTOR DE TIERRA</option>
                 <option value="PERMISO INSTRUCTOR DE VUELO">PERMISO INSTRUCTOR DE VUELO</option>
+                <option value="POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA">POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA</option>
+                <option value="AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA">AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA</option>
+                <option value="CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO">CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO</option>
               </select>
               <div class="invalid-feedback">
                 Por favor selecciona un concepto de venta.
@@ -623,6 +638,9 @@
       let clave_venta9 = ["05329289"];
       let clave_venta10 = ["05312244"];
       let clave_venta11 = ["05311275"];
+      let clave_venta12 = ["05220248"];
+      let clave_venta13 = ["05006218"];
+      let clave_venta14 = ["05321246"];
 
       let tarifa_venta1 = ["2548.00"];
       let tarifa_venta2 = ["212.00"];
@@ -635,6 +653,9 @@
       let tarifa_venta9 = ["2092.00"];
       let tarifa_venta10 = ["1375.00"];
       let tarifa_venta11 = ["1834.00"];
+      let tarifa_venta12 = ["523.00"];
+      let tarifa_venta13 = ["212.00"];
+      let tarifa_venta14 = ["1375.00"];
 
       let claveDropdown1 = document.getElementById("claveDropdown1");
       let tarifaDropdown1 = document.getElementById("tarifaDropdown1");
@@ -683,6 +704,18 @@
         claveDropdown1.innerHTML = doHTMLClave1(clave_venta11);
         tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta11);
       }
+      if (conceptos_venta1 == "POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta12);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta12);
+      }
+      if (conceptos_venta1 == "AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta13);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta13);
+      }
+      if (conceptos_venta1 == "CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO") {
+        claveDropdown1.innerHTML = doHTMLClave1(clave_venta14);
+        tarifaDropdown1.innerHTML = doHTMLTarifa1(tarifa_venta14);
+      }
       if (conceptos_venta1 == "") {
         claveDropdown1.innerHTML = null;
         tarifaDropdown1.innerHTML = null;
@@ -701,6 +734,9 @@
       let clave_venta9 = ["05329289"];
       let clave_venta10 = ["05312244"];
       let clave_venta11 = ["05311275"];
+      let clave_venta12 = ["05220248"];
+      let clave_venta13 = ["05006218"];
+      let clave_venta14 = ["05321246"];
 
       let tarifa_venta1 = ["2548.00"];
       let tarifa_venta2 = ["212.00"];
@@ -713,6 +749,9 @@
       let tarifa_venta9 = ["2092.00"];
       let tarifa_venta10 = ["1375.00"];
       let tarifa_venta11 = ["1834.00"];
+      let tarifa_venta12 = ["523.00"];
+      let tarifa_venta13 = ["212.00"];
+      let tarifa_venta14 = ["1375.00"];
 
       let claveDropdown2 = document.getElementById("claveDropdown2");
       let tarifaDropdown2 = document.getElementById("tarifaDropdown2");
@@ -761,6 +800,18 @@
         claveDropdown2.innerHTML = doHTMLClave2(clave_venta11);
         tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta11);
       }
+      if (conceptos_venta2 == "POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta12);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta12);
+      }
+      if (conceptos_venta2 == "AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta13);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta13);
+      }
+      if (conceptos_venta2 == "CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO") {
+        claveDropdown2.innerHTML = doHTMLClave2(clave_venta14);
+        tarifaDropdown2.innerHTML = doHTMLTarifa2(tarifa_venta14);
+      }
       if (conceptos_venta2 == "") {
         claveDropdown2.innerHTML = null;
         tarifaDropdown2.innerHTML = null;
@@ -779,6 +830,9 @@
       let clave_venta9 = ["05329289"];
       let clave_venta10 = ["05312244"];
       let clave_venta11 = ["05311275"];
+      let clave_venta12 = ["05220248"];
+      let clave_venta13 = ["05006218"];
+      let clave_venta14 = ["05321246"];
 
       let tarifa_venta1 = ["2548.00"];
       let tarifa_venta2 = ["212.00"];
@@ -791,6 +845,9 @@
       let tarifa_venta9 = ["2092.00"];
       let tarifa_venta10 = ["1375.00"];
       let tarifa_venta11 = ["1834.00"];
+      let tarifa_venta12 = ["523.00"];
+      let tarifa_venta13 = ["212.00"];
+      let tarifa_venta14 = ["1375.00"];
 
       let claveDropdown3 = document.getElementById("claveDropdown3");
       let tarifaDropdown3 = document.getElementById("tarifaDropdown3");
@@ -839,6 +896,18 @@
         claveDropdown3.innerHTML = doHTMLClave3(clave_venta11);
         tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta11);
       }
+      if (conceptos_venta3 == "POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta12);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta12);
+      }
+      if (conceptos_venta3 == "AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta13);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta13);
+      }
+      if (conceptos_venta3 == "CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO") {
+        claveDropdown3.innerHTML = doHTMLClave3(clave_venta14);
+        tarifaDropdown3.innerHTML = doHTMLTarifa3(tarifa_venta14);
+      }
       if (conceptos_venta3 == "") {
         claveDropdown3.innerHTML = null;
         tarifaDropdown3.innerHTML = null;
@@ -857,6 +926,9 @@
       let clave_venta9 = ["05329289"];
       let clave_venta10 = ["05312244"];
       let clave_venta11 = ["05311275"];
+      let clave_venta12 = ["05220248"];
+      let clave_venta13 = ["05006218"];
+      let clave_venta14 = ["05321246"];
 
       let tarifa_venta1 = ["2548.00"];
       let tarifa_venta2 = ["212.00"];
@@ -869,6 +941,9 @@
       let tarifa_venta9 = ["2092.00"];
       let tarifa_venta10 = ["1375.00"];
       let tarifa_venta11 = ["1834.00"];
+      let tarifa_venta12 = ["523.00"];
+      let tarifa_venta13 = ["212.00"];
+      let tarifa_venta14 = ["1375.00"];
 
       let claveDropdown4 = document.getElementById("claveDropdown4");
       let tarifaDropdown4 = document.getElementById("tarifaDropdown4");
@@ -917,6 +992,18 @@
         claveDropdown4.innerHTML = doHTMLClave4(clave_venta11);
         tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta11);
       }
+      if (conceptos_venta4 == "POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta12);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta12);
+      }
+      if (conceptos_venta4 == "AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta13);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta13);
+      }
+      if (conceptos_venta4 == "CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO") {
+        claveDropdown4.innerHTML = doHTMLClave4(clave_venta14);
+        tarifaDropdown4.innerHTML = doHTMLTarifa4(tarifa_venta14);
+      }
       if (conceptos_venta4 == "") {
         claveDropdown4.innerHTML = null;
         tarifaDropdown4.innerHTML = null;
@@ -935,6 +1022,9 @@
       let clave_venta9 = ["05329289"];
       let clave_venta10 = ["05312244"];
       let clave_venta11 = ["05311275"];
+      let clave_venta12 = ["05220248"];
+      let clave_venta13 = ["05006218"];
+      let clave_venta14 = ["05321246"];
 
       let tarifa_venta1 = ["2548.00"];
       let tarifa_venta2 = ["212.00"];
@@ -947,6 +1037,9 @@
       let tarifa_venta9 = ["2092.00"];
       let tarifa_venta10 = ["1375.00"];
       let tarifa_venta11 = ["1834.00"];
+      let tarifa_venta12 = ["523.00"];
+      let tarifa_venta13 = ["212.00"];
+      let tarifa_venta14 = ["1375.00"];
 
       let claveDropdown5 = document.getElementById("claveDropdown5");
       let tarifaDropdown5 = document.getElementById("tarifaDropdown5");
@@ -994,6 +1087,18 @@
       if (conceptos_venta5 == "PERMISO INSTRUCTOR DE VUELO") {
         claveDropdown5.innerHTML = doHTMLClave5(clave_venta11);
         tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta11);
+      }
+      if (conceptos_venta5 == "POR LA MODIFICACIÓN DE LA AUTORIZACIÓN ENMIENDA") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta12);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta12);
+      }
+      if (conceptos_venta5 == "AMPLIACIÓN PERMISO DE INSTRUCTOR TIERRA") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta13);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta13);
+      }
+      if (conceptos_venta5 == "CERTIFICACIÓN DE HOMOLOGACIÓN DE RUIDO") {
+        claveDropdown5.innerHTML = doHTMLClave5(clave_venta14);
+        tarifaDropdown5.innerHTML = doHTMLTarifa5(tarifa_venta14);
       }
       if (conceptos_venta5 == "") {
         claveDropdown5.innerHTML = null;
