@@ -191,7 +191,7 @@ formatoPagoMultiple = () => {
         doc.text(170, 213, '$' + tarifa_venta5);
     }
 
-    doc.text(170, 225, '$' + 'IMPORTE');
+    doc.text(170, 225, '$' + importe);
 
     // doc.rect(71.399, 15.698, 102.782, 19.597, 'S');
     // doc.setFontSize(12);
