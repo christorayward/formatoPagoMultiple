@@ -1176,26 +1176,31 @@
         importe += parseFloat(cantidad_1) * parseFloat(tarifa_venta1);
         tarifa_venta1 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta1);
         tarifa_venta1 = tarifa_venta1.toString().indexOf('.') === -1 ? tarifa_venta1.toFixed(2) : tarifa_venta1.toString();
+        importe1 = parseFloat(cantidad_1) * parseFloat(tarifa_venta1);
       }
       if (tarifa_venta2 != null && tarifa_venta2 != 'SELECCIONA...' && tarifa_venta2 != '') {
         importe += parseFloat(cantidad_2) * parseFloat(tarifa_venta2);
         tarifa_venta2 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta2);
         tarifa_venta2 = tarifa_venta2.toString().indexOf('.') === -1 ? tarifa_venta2.toFixed(2) : tarifa_venta2.toString();
+        importe2 = parseFloat(cantidad_2) * parseFloat(tarifa_venta2);
       }
       if (tarifa_venta3 != null && tarifa_venta3 != 'SELECCIONA...' && tarifa_venta3 != '') {
         importe += parseFloat(cantidad_3) * parseFloat(tarifa_venta3);
         tarifa_venta3 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta3);
         tarifa_venta3 = tarifa_venta3.toString().indexOf('.') === -1 ? tarifa_venta3.toFixed(2) : tarifa_venta3.toString();
+        importe3 = parseFloat(cantidad_3) * parseFloat(tarifa_venta3);
       }
       if (tarifa_venta4 != null && tarifa_venta4 != 'SELECCIONA...' && tarifa_venta4 != '') {
         importe += parseFloat(cantidad_4) * parseFloat(tarifa_venta4);
         tarifa_venta4 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta4);
         tarifa_venta4 = tarifa_venta4.toString().indexOf('.') === -1 ? tarifa_venta4.toFixed(2) : tarifa_venta4.toString();
+        importe4 = parseFloat(cantidad_4) * parseFloat(tarifa_venta4);
       }
       if (tarifa_venta5 != null && tarifa_venta5 != 'SELECCIONA...' && tarifa_venta5 != '') {
         importe += parseFloat(cantidad_5) * parseFloat(tarifa_venta5);
         tarifa_venta5 = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(tarifa_venta5);
         tarifa_venta5 = tarifa_venta5.toString().indexOf('.') === -1 ? tarifa_venta5.toFixed(2) : tarifa_venta5.toString();
+        importe5 = parseFloat(cantidad_5) * parseFloat(tarifa_venta5);
       }
 
       importe = new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(importe);
