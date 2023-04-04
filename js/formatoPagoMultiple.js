@@ -133,7 +133,7 @@ formatoPagoMultiple = () => {
         doc.text(71, 153, conceptos_venta1);
     }
     doc.setFontSize(11);
-    doc.text(170, 153, '$' + tarifa_venta1);
+    doc.text(170, 153, '$' + importe1);
 
     if (clave_venta2 != 'SELECCIONA...' && clave_venta2 != '') {
         doc.text(27, 168, cantidad_2);
@@ -146,7 +146,7 @@ formatoPagoMultiple = () => {
             doc.text(71, 168, conceptos_venta2);
         }
         doc.setFontSize(11);
-        doc.text(170, 168, '$' + tarifa_venta2);
+        doc.text(170, 168, '$' + importe2);
     }
 
     if (clave_venta3 != 'SELECCIONA...' && clave_venta3 != '') {
@@ -160,7 +160,7 @@ formatoPagoMultiple = () => {
             doc.text(71, 183, conceptos_venta3);
         }
         doc.setFontSize(11);
-        doc.text(170, 183, '$' + tarifa_venta3);
+        doc.text(170, 183, '$' + importe3);
     }
 
     if (clave_venta4 != 'SELECCIONA...' && clave_venta4 != '') {
@@ -174,7 +174,7 @@ formatoPagoMultiple = () => {
             doc.text(71, 198, conceptos_venta4);
         }
         doc.setFontSize(11);
-        doc.text(170, 198, '$' + tarifa_venta4);
+        doc.text(170, 198, '$' + importe4);
     }
 
     if (clave_venta5 != 'SELECCIONA...' && clave_venta5 != '') {
@@ -188,7 +188,7 @@ formatoPagoMultiple = () => {
             doc.text(71, 213, conceptos_venta5);
         }
         doc.setFontSize(11);
-        doc.text(170, 213, '$' + tarifa_venta5);
+        doc.text(170, 213, '$' + importe5);
     }
 
     doc.text(170, 225, '$' + importe);
